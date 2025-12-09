@@ -34,9 +34,12 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 const day1 = __importStar(require("./day-01"));
+const day2 = __importStar(require("./day-02"));
 const run = [
     ['Day 1 Part 1', day1.part1],
     ['Day 1 Part 2', day1.part2],
+    ['Day 2 Part 1', day2.part1],
+    ['Day 2 Part 2', day2.part2],
 ];
 for (const [d, f] of run) {
     console.log(`${d}: ${f()}`);
