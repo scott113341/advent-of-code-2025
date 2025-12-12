@@ -8,5 +8,5 @@ export function loadInput(day: number, testNumber?: number) {
       ? `${__dirname}/../../input/day-${dayString}/input.txt`
       : `${__dirname}/../../input/day-${dayString}/test-${testNumber}.txt`;
 
-  return fs.readFileSync(path, "utf8");
+  return fs.readFileSync(path, "utf8").trim();
 }
