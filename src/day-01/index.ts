@@ -1,4 +1,4 @@
-import { loadInput } from '../common/input';
+import { loadInput } from "../common/input";
 
 const INPUT = loadInput(1);
 
@@ -40,14 +40,14 @@ class Dial {
   }
 
   turn(instruction: Instruction) {
-    const sign = instruction.direction === 'left' ? -1 : 1;
+    const sign = instruction.direction === "left" ? -1 : 1;
     this.position += sign * instruction.steps;
     this.normalizePosition();
   }
 
   turnAndCountZeroClicks(instruction: Instruction) {
     let zeroCount = 0;
-    const click = instruction.direction === 'left' ? -1 : 1;
+    const click = instruction.direction === "left" ? -1 : 1;
 
     for (let i = 0; i < instruction.steps; i++) {
       this.position += click;
@@ -65,16 +65,16 @@ class Dial {
 }
 
 type Instruction = {
-  direction: 'left' | 'right';
+  direction: "left" | "right";
   steps: number;
 };
 
 export function parseInput(input: string): Array<Instruction> {
   return input
-    .split('\n')
-    .filter(line => line.length > 0)
-    .map(line => {
-      const direction = line[0] === 'L' ? 'left' : 'right';
+    .split("\n")
+    .filter((line) => line.length > 0)
+    .map((line) => {
+      const direction = line[0] === "L" ? "left" : "right";
       const steps = parseInt(line.slice(1));
       return { direction, steps };
     });

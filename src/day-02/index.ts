@@ -1,4 +1,4 @@
-import { loadInput } from '../common/input';
+import { loadInput } from "../common/input";
 
 const INPUT = loadInput(2);
 
@@ -34,8 +34,15 @@ export function isInvalidPart2(id: bigint) {
     let allChunksMatch = true;
 
     // Check each subsequent chunk of `chunkLen` to see if it matches `chunk`
-    for (let laterChunkStart = chunkLen; laterChunkStart < len; laterChunkStart += chunkLen) {
-      const laterChunk = idStr.substring(laterChunkStart, laterChunkStart + chunkLen);
+    for (
+      let laterChunkStart = chunkLen;
+      laterChunkStart < len;
+      laterChunkStart += chunkLen
+    ) {
+      const laterChunk = idStr.substring(
+        laterChunkStart,
+        laterChunkStart + chunkLen,
+      );
       if (laterChunk !== chunk) {
         allChunksMatch = false;
       }
@@ -87,7 +94,7 @@ export function parseInput(input: string): Array<IdRange> {
     .trim()
     .split(",")
     .map((rangeString) => {
-      const [startStr, endStr] = rangeString.split('-');
+      const [startStr, endStr] = rangeString.split("-");
       return { start: BigInt(startStr), end: BigInt(endStr) };
     });
 }
