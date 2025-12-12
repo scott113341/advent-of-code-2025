@@ -1,6 +1,6 @@
 import { loadInput } from "../common/input";
 
-const INPUT = loadInput(9999);
+const INPUT = loadInput(1);
 
 export function part1(input = INPUT) {
   return 1;
