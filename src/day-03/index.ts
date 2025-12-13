@@ -1,4 +1,5 @@
 import { loadInput } from "../common/input";
+import { Range } from "../common/util";
 
 type Bank = number[];
 
@@ -64,24 +65,6 @@ function findLargest(bank: Bank, startIdx: number, spaceNeeded: number) {
   }
 
   return max;
-}
-
-class Range {
-  private readonly start: number;
-  private readonly endInclusive: number;
-
-  constructor(start: number, endInclusive: number) {
-    this.start = start;
-    this.endInclusive = endInclusive;
-  }
-
-  *[Symbol.iterator]() {
-    let current = this.start;
-    while (current <= this.endInclusive) {
-      yield current;
-      current++;
-    }
-  }
 }
 
 export function parseInput(input: string): Bank[] {
