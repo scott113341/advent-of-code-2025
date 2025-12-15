@@ -1,6 +1,6 @@
 export class Range {
-  private readonly start: number;
-  private readonly endInclusive: number;
+  readonly start: number;
+  readonly endInclusive: number;
 
   constructor(start: number, endInclusive: number) {
     this.start = start;
@@ -13,5 +13,9 @@ export class Range {
       yield current;
       current++;
     }
+  }
+
+  includes(n: number) {
+    return n >= this.start && n <= this.endInclusive;
   }
 }
