@@ -4,6 +4,7 @@ import * as day3 from "./day-03";
 import * as day4 from "./day-04";
 import * as day5 from "./day-05";
 import * as day6 from "./day-06";
+import * as day7 from "./day-07";
 
 const run: Array<[string, (_?: string) => { toString(): string }]> = [
   ["Day 1 Part 1", day1.part1],
@@ -23,6 +24,9 @@ const run: Array<[string, (_?: string) => { toString(): string }]> = [
 
   ["Day 6 Part 1", day6.part1],
   ["Day 6 Part 2", day6.part2],
+
+  ["Day 7 Part 1", day7.part1],
+  ["Day 7 Part 2", day7.part2],
 ];
 
 for (const [d, f] of run) {
