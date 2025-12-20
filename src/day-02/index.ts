@@ -1,4 +1,5 @@
-import { loadInput } from "../common/input";
+import { loadInput } from "../common/input.js";
+import { isMain } from "../common/util.js";
 
 const INPUT = loadInput(2);
 
@@ -97,4 +98,9 @@ export function parseInput(input: string): Array<IdRange> {
       const [startStr, endStr] = rangeString.split("-");
       return { start: BigInt(startStr), end: BigInt(endStr) };
     });
+}
+
+if (isMain(import.meta)) {
+  console.log("Part 1: ", part1());
+  console.log("Part 2: ", part2());
 }

@@ -1,8 +1,8 @@
 import test from "node:test";
 import assert from "node:assert";
 
-import { loadInput } from "../common/input";
-import { parseInput, part1, part2 } from "./index";
+import { loadInput } from "../common/input.js";
+import { parseInput, part1, part2 } from "./index.js";
 
 const TEST_1 = loadInput(3, 1);
 

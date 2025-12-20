@@ -1,5 +1,5 @@
-import { loadInput } from "../common/input";
-import { Range } from "../common/util";
+import { loadInput } from "../common/input.js";
+import { isMain, Range } from "../common/util.js";
 
 // The database operates on ingredient IDs
 // There is a list of fresh ID ranges: are inclusive & can overlap
@@ -90,4 +90,9 @@ export function parseInput(input: string): Ingredients {
   const ingredientIds = ingredientIdStr.split("\n").map((l) => parseInt(l));
 
   return new Ingredients(freshRanges, ingredientIds);
+}
+
+if (isMain(import.meta)) {
+  console.log("Part 1: ", part1());
+  console.log("Part 2: ", part2());
 }

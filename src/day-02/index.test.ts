@@ -1,14 +1,14 @@
 import test from "node:test";
 import assert from "node:assert";
 
-import { loadInput } from "../common/input";
+import { loadInput } from "../common/input.js";
 import {
   isInvalidPart1,
   isInvalidPart2,
   parseInput,
   part1,
   part2,
-} from "./index";
+} from "./index.js";
 
 const TEST_1 = loadInput(2, 1);
 

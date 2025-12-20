@@ -1,4 +1,5 @@
-import { loadInput } from "../common/input";
+import { loadInput } from "../common/input.js";
+import { isMain } from "../common/util.js";
 
 const INPUT = loadInput(1);
 
@@ -78,4 +79,9 @@ export function parseInput(input: string): Array<Instruction> {
       const steps = parseInt(line.slice(1));
       return { direction, steps };
     });
+}
+
+if (isMain(import.meta)) {
+  console.log("Part 1: ", part1());
+  console.log("Part 2: ", part2());
 }

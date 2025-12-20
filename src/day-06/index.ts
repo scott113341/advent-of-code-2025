@@ -1,4 +1,5 @@
-import { loadInput } from "../common/input";
+import { loadInput } from "../common/input.js";
+import { isMain } from "../common/util.js";
 
 // Each problem's numbers are arranged vertically
 // At the bottom of the problem is the symbol for the operation
@@ -103,4 +104,9 @@ export function parseInput2(input: string): Array<Problem> {
   }
 
   return problems;
+}
+
+if (isMain(import.meta)) {
+  console.log("Part 1: ", part1());
+  console.log("Part 2: ", part2());
 }

@@ -1,5 +1,6 @@
-import { loadInput } from "../common/input";
-import { Range } from "../common/util";
+import { loadInput } from "../common/input.js";
+import { isMain } from "../common/util.js";
+import { Range } from "../common/util.js";
 
 type Bank = number[];
 
@@ -69,4 +70,9 @@ function findLargest(bank: Bank, startIdx: number, spaceNeeded: number) {
 
 export function parseInput(input: string): Bank[] {
   return input.split("\n").map((l) => l.split("").map((b) => parseInt(b)));
+}
+
+if (isMain(import.meta)) {
+  console.log("Part 1: ", part1());
+  console.log("Part 2: ", part2());
 }

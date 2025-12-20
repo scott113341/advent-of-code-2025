@@ -1,3 +1,6 @@
+import { fileURLToPath } from "node:url";
+import { realpathSync } from "node:fs";
+
 export class Range {
   readonly start: number;
   readonly endInclusive: number;
@@ -17,5 +20,24 @@ export class Range {
 
   includes(n: number) {
     return n >= this.start && n <= this.endInclusive;
+  }
+}
+
+/**
+ * Checks if the given importMeta is the main entry point of the process.
+ * @param importMeta The import.meta object from the module.
+ * @returns true if the module is the main entry point.
+ */
+export function isMain(importMeta: ImportMeta): boolean {
+  if (!process.argv[1]) {
+    return false;
+  }
+
+  try {
+    const scriptPath = realpathSync(process.argv[1]);
+    const modulePath = realpathSync(fileURLToPath(importMeta.url));
+    return scriptPath === modulePath;
+  } catch {
+    return false;
   }
 }

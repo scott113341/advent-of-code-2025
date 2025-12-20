@@ -1,4 +1,5 @@
-import { loadInput } from "../common/input";
+import { loadInput } from "../common/input.js";
+import { isMain } from "../common/util.js";
 
 // Diagram of the tachyon manifold. A tachyon beam enters the manifold at "S"
 // and moves down. They pass through space (.). When hitting a splitter (^),
@@ -128,4 +129,9 @@ export function part2(input = INPUT) {
 
 export function parseInput(input: string): Manifold {
   return input.split("\n").map((l) => l.split("").filter(isManifoldSpace));
+}
+
+if (isMain(import.meta)) {
+  console.log("Part 1: ", part1());
+  console.log("Part 2: ", part2());
 }

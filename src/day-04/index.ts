@@ -1,5 +1,5 @@
-import { loadInput } from "../common/input";
-import { Range } from "../common/util";
+import { loadInput } from "../common/input.js";
+import { isMain } from "../common/util.js";
 
 // - Rolls of paper are "@" in the input grid
 // - Forklifts can access a roll of paper if there are fewer than four rolls of
@@ -115,4 +115,9 @@ export function parseInput(input: string): Grid {
   });
 
   return grid;
+}
+
+if (isMain(import.meta)) {
+  console.log("Part 1: ", part1());
+  console.log("Part 2: ", part2());
 }

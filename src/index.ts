@@ -1,10 +1,10 @@
-import * as day1 from "./day-01";
-import * as day2 from "./day-02";
-import * as day3 from "./day-03";
-import * as day4 from "./day-04";
-import * as day5 from "./day-05";
-import * as day6 from "./day-06";
-import * as day7 from "./day-07";
+import * as day1 from "./day-01/index.js";
+import * as day2 from "./day-02/index.js";
+import * as day3 from "./day-03/index.js";
+import * as day4 from "./day-04/index.js";
+import * as day5 from "./day-05/index.js";
+import * as day6 from "./day-06/index.js";
+import * as day7 from "./day-07/index.js";
 
 const run: Array<[string, (_?: string) => { toString(): string }]> = [
   ["Day 1 Part 1", day1.part1],
