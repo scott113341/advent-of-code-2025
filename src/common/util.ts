@@ -41,3 +41,9 @@ export function isMain(importMeta: ImportMeta): boolean {
     return false;
   }
 }
+
+export function* times(n: number) {
+  for (let count = 1; count <= n; count++) {
+    yield count;
+  }
+}
